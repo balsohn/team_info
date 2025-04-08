@@ -16,7 +16,6 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
             line-height: 1.6;
         }
 
@@ -33,7 +32,6 @@
             text-align: center;
             position: relative;
             height: 300px;
-            /* 이미지 높이에 맞게 조정 */
             overflow: hidden;
         }
 
@@ -44,22 +42,8 @@
             width: 100%;
             height: 100%;
             background-image: url('images/image.png');
-            /* 이미지 경로 수정 필요 */
             background-size: cover;
             background-position: center;
-        }
-
-        .team-name {
-            position: relative;
-            z-index: 10;
-            font-size: 3rem;
-            font-weight: bold;
-            color: white;
-            /* 배경에 맞게 색상 조정 */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            /* 가독성을 위한 그림자 */
-            margin-top: 380px;
-            /* 이미지 아래쪽에 위치 */
         }
 
         /* 에러 메시지 팝업 크기 증가 */
@@ -70,9 +54,7 @@
             transform: translate(-50%, -50%);
             background-color: #f0f0f0;
             border: 3px solid #0055ea;
-            /* 테두리 두께 증가 */
             width: 400px;
-            /* 팝업 너비 증가 */
             box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
             z-index: 100;
         }
@@ -82,9 +64,7 @@
             background-color: #0055ea;
             color: white;
             padding: 6px 12px;
-            /* 여백 증가 */
             font-size: 18px;
-            /* 글씨 크기 증가 */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -93,13 +73,11 @@
         .close-btn {
             cursor: pointer;
             font-size: 20px;
-            /* X 버튼 크기 증가 */
         }
 
         /* 에러 내용 크기 및 여백 증가 */
         .error-content {
             padding: 20px;
-            /* 여백 증가 */
             display: flex;
             align-items: center;
         }
@@ -109,31 +87,24 @@
             color: red;
             font-weight: bold;
             font-size: 28px;
-            /* 아이콘 크기 증가 */
             margin-right: 20px;
-            /* 여백 증가 */
         }
 
         /* 에러 메시지 글씨 크기 증가 */
         .error-message {
             font-size: 22px;
-            /* 글씨 크기 증가 */
             font-weight: bold;
-            /* 약간 두껍게 */
         }
 
         /* 버튼 크기 및 글씨 크기 증가 */
         .error-button {
             display: block;
             margin: 10px auto 15px;
-            /* 아래 여백 증가 */
             padding: 6px 35px;
-            /* 버튼 크기 증가 */
             background-color: #f0f0f0;
             border: 1px solid #888;
             border-radius: 3px;
             font-size: 18px;
-            /* 글씨 크기 증가 */
             cursor: pointer;
         }
 
@@ -151,14 +122,8 @@
 
         #nav-bar .container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-        }
-
-        .nav-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
         }
 
         .nav-links {
@@ -167,7 +132,7 @@
         }
 
         .nav-links li {
-            margin-left: 20px;
+            margin: 0 20px;
         }
 
         .nav-links a {
@@ -176,11 +141,18 @@
             padding: 8px 15px;
             border-radius: 4px;
             transition: all 0.3s;
+            font-weight: bold;
+            cursor: pointer;
         }
 
         .nav-links a:hover {
             background-color: #f0f0f0;
             color: #333;
+        }
+
+        .nav-links a.active {
+            background-color: #0055ea;
+            color: white;
         }
 
         /* 스크롤 시 고정되는 네비게이션 바 스타일 */
@@ -191,12 +163,358 @@
             z-index: 1000;
         }
 
-        /* 섹션 스타일 */
-        .section {
-            padding: 80px 0;
-            min-height: 100px;
+        /* 컨텐츠 섹션 */
+        .content-section {
+            display: none; /* 기본적으로 모든 섹션 숨김 */
+            padding: 50px 0;
+            min-height: 500px;
+        }
+
+        .content-section.active {
+            display: block; /* 활성화된 섹션만 표시 */
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #0055ea;
+        }
+
+        /* 팀 소개 섹션 스타일 */
+        .team-info-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-info-box {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .team-info-box h3 {
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .team-info-box ul {
+            padding-left: 20px;
+        }
+
+        .team-info-box li {
+            margin-bottom: 8px;
+        }
+
+        /* 팀원 소개 섹션 스타일 */
+        .members-container {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 팀원 목록 영역 */
+        .members-list {
+            flex: 1;
+            padding-right: 30px;
+        }
+
+        .member-selector {
+            list-style: none;
+        }
+
+        .member-selector li {
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .member-selector li:hover {
+            background-color: #e0e0e0;
+        }
+
+        .member-selector li.active {
+            background-color: #0055ea;
+            color: white;
+        }
+
+        /* 팀원 상세 정보 영역 */
+        .member-detail {
+            flex: 2;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .member-detail-content {
+            display: none; /* 기본적으로 모든 상세 정보 숨김 */
+        }
+
+        .member-detail-content.active {
+            display: block; /* 활성화된 팀원 정보만 표시 */
+        }
+
+        .member-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #f0f0f0;
+            margin-right: 30px;
+        }
+
+        .profile-info h3 {
+            margin-bottom: 5px;
+            font-size: 22px;
+        }
+
+        .profile-info p {
+            color: #666;
+            font-style: italic;
+        }
+
+        .member-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #0055ea;
+        }
+
+        .info-content {
+            line-height: 1.6;
+        }
+
+        /* 푸터 스타일 */
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #eee;
         }
     </style>
+</head>
+
+<body>
+    <!-- 초기 헤더 (팀명) -->
+    <header class="hero-header">
+        <div class="creation-image">
+            <div class="error-popup">
+                <div class="error-title">Fatal Error <span class="close-btn">✕</span></div>
+                <div class="error-content">
+                    <div class="error-icon">✕</div>
+                    <div class="error-message">천지창조</div>
+                </div>
+                <button class="error-button">OK</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 네비게이션 바 -->
+    <nav id="nav-bar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a class="nav-link active" data-target="team-info">팀 소개</a></li>
+                <li><a class="nav-link" data-target="members">팀원 소개</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="container">
+        <!-- 팀 소개 섹션 -->
+        <section id="team-info" class="content-section active">
+            <h2 class="section-title">팀 소개</h2>
+            <div class="team-info-content">
+                <div class="team-info-box">
+                    <h3>우리 팀의 특징</h3>
+                    <p>
+                        천지창조는 창의적인 아이디어와 혁신적인 기술을 바탕으로 웹 개발 프로젝트를 수행하고 있습니다.
+                        각자의 강점과 개성을 존중하며, 서로의 아이디어를 발전시키는 협업 문화를 지향합니다.
+                    </p>
+                </div>
+                
+                <div class="team-info-box">
+                    <h3>추구하는 목표</h3>
+                    <p>
+                        사용자 경험을 최우선으로 생각하며, 누구나 쉽게 사용할 수 있는 웹 서비스를 제작하는 것을 목표로 합니다.
+                        끊임없는 학습과 성장을 통해 최신 기술을 적용하고 발전시켜 나갑니다.
+                    </p>
+                </div>
+                
+                <div class="team-info-box">
+                    <h3>팀의 약속</h3>
+                    <ul>
+                        <li>정기적인 소통으로 의견 차이를 좁히고 방향성을 맞춥니다.</li>
+                        <li>각자의 역할에 책임을 다하며 일정을 준수합니다.</li>
+                        <li>서로 존중하고 배려하는 자세로 협업합니다.</li>
+                        <li>문제 발생 시 함께 해결책을 모색합니다.</li>
+                        <li>결과물의 품질을 위해 끊임없이 노력합니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 팀원 소개 섹션 -->
+        <section id="members" class="content-section">
+            <h2 class="section-title">팀원 소개</h2>
+            <div class="members-container">
+                <!-- 팀원 목록 -->
+                <div class="members-list">
+                    <ul class="member-selector">
+                        <li class="active" data-member="member1">홍길동</li>
+                        <li data-member="member2">김철수</li>
+                        <li data-member="member3">이영희</li>
+                        <li data-member="member4">박지민</li>
+                        <li data-member="member5">최준호</li>
+                        <li data-member="member6">정민지</li>
+                    </ul>
+                </div>
+
+                <!-- 팀원 상세 정보 -->
+                <div class="member-detail">
+                    <!-- 팀원 1 상세 정보 -->
+                    <div id="member1" class="member-detail-content active">
+                        <div class="member-profile">
+                            <img src="images/member1.jpg" alt="홍길동" class="profile-image">
+                            <div class="profile-info">
+                                <h3>홍길동</h3>
+                                <p>프론트엔드 개발자</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <div class="info-item">
+                                <div class="info-label">MBTI</div>
+                                <div class="info-content">ENFJ</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">장점</div>
+                                <div class="info-content">창의적인 문제 해결 능력과 빠른 적응력을 가지고 있습니다.</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">협업 스타일</div>
+                                <div class="info-content">적극적인 소통을 통해 팀원들과 아이디어를 공유하고 발전시키는 것을 선호합니다.</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">블로그</div>
+                                <div class="info-content"><a href="#" target="_blank">blog.example.com/hongildong</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 팀원 2 상세 정보 -->
+                    <div id="member2" class="member-detail-content">
+                        <div class="member-profile">
+                            <img src="images/member2.jpg" alt="김철수" class="profile-image">
+                            <div class="profile-info">
+                                <h3>김철수</h3>
+                                <p>백엔드 개발자</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <div class="info-item">
+                                <div class="info-label">MBTI</div>
+                                <div class="info-content">INTJ</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">장점</div>
+                                <div class="info-content">논리적인 사고와 체계적인 문제 해결 방식을 갖추고 있습니다.</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">협업 스타일</div>
+                                <div class="info-content">명확한 목표와 역할 분담을 통한 효율적인 협업을 추구합니다.</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">블로그</div>
+                                <div class="info-content"><a href="#" target="_blank">blog.example.com/kimchulsoo</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 팀원 3 상세 정보 -->
+                    <div id="member3" class="member-detail-content">
+                        <div class="member-profile">
+                            <img src="images/member3.jpg" alt="이영희" class="profile-image">
+                            <div class="profile-info">
+                                <h3>이영희</h3>
+                                <p>UI/UX 디자이너</p>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <div class="info-item">
+                                <div class="info-label">MBTI</div>
+                                <div class="info-content">ISFP</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">장점</div>
+                                <div class="info-content">심미적 감각과 사용자 중심적 사고를 가지고 있습니다.</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">협업 스타일</div>
+                                <div class="info-content">다양한 의견을 수용하고 사용자 경험을 최우선으로 생각합니다.</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">블로그</div>
+                                <div class="info-content"><a href="#" target="_blank">blog.example.com/leeyounghee</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 나머지 팀원들... -->
+                    <div id="member4" class="member-detail-content">
+                        <!-- 팀원 4 정보 -->
+                    </div>
+                    <div id="member5" class="member-detail-content">
+                        <!-- 팀원 5 정보 -->
+                    </div>
+                    <div id="member6" class="member-detail-content">
+                        <!-- 팀원 6 정보 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 천지창조. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // 네비게이션 바 요소 가져오기
@@ -221,104 +539,49 @@
                 }
             }
 
-            // 부드러운 스크롤 기능 추가
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
+            // 네비게이션 링크 클릭 시 해당 섹션 표시
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // 모든 네비게이션 링크에서 active 클래스 제거
+                    navLinks.forEach(nl => nl.classList.remove('active'));
+                    
+                    // 클릭한 링크에 active 클래스 추가
+                    this.classList.add('active');
+                    
+                    // 모든 섹션 숨기기
+                    const allSections = document.querySelectorAll('.content-section');
+                    allSections.forEach(section => section.classList.remove('active'));
+                    
+                    // 선택한 섹션만 표시
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
 
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-
-                    window.scrollTo({
-                        top: targetElement.offsetTop - navbar.offsetHeight,
-                        behavior: 'smooth'
-                    });
+            // 팀원 선택 시 상세 정보 표시
+            const memberItems = document.querySelectorAll('.member-selector li');
+            
+            memberItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // 모든 목록 항목에서 active 클래스 제거
+                    memberItems.forEach(mi => mi.classList.remove('active'));
+                    
+                    // 클릭한 항목에 active 클래스 추가
+                    this.classList.add('active');
+                    
+                    // 모든 상세 정보 숨기기
+                    const allDetails = document.querySelectorAll('.member-detail-content');
+                    allDetails.forEach(detail => detail.classList.remove('active'));
+                    
+                    // 선택한 팀원의 상세 정보 표시
+                    const memberId = this.getAttribute('data-member');
+                    document.getElementById(memberId).classList.add('active');
                 });
             });
         });
     </script>
-</head>
-
-<body>
-    <!-- 초기 헤더 (팀명) -->
-    <header class="hero-header">
-        <div class="creation-image">
-            <div class="error-popup">
-                <div class="error-title">Fatal Error <span class="close-btn">✕</span></div>
-                <div class="error-content">
-                    <div class="error-icon">✕</div>
-                    <div class="error-message">천지창조</div>
-                </div>
-                <button class="error-button">OK</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- 스크롤 시 고정되는 네비게이션 바 -->
-    <nav id="nav-bar">
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="#home">홈</a></li>
-                <li><a href="#team-intro">팀 소개</a></li>
-                <li><a href="#team-goals">팀 목표</a></li>
-                <li><a href="#members">팀원 소개</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- 메인 컨텐츠 섹션 -->
-    <main>
-        <!-- 홈 섹션 -->
-        <section id="home" class="section">
-            <div class="container">
-                <div class="intro-text">
-                    <p></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 팀 소개 섹션 -->
-        <section id="team-intro" class="section">
-            <div class="container">
-                <h2>팀 소개</h2>
-                <div class="team-description">
-                    <!-- 팀 특징 상세 설명 -->
-                </div>
-            </div>
-        </section>
-
-        <!-- 팀 목표 섹션 -->
-        <section id="team-goals" class="section">
-            <div class="container">
-                <h2>팀 목표</h2>
-                <div class="goals-content">
-                    <!-- 팀이 추구하는 궁극적인 목표 내용 -->
-                </div>
-            </div>
-        </section>
-
-        <!-- 팀원 소개 섹션 -->
-        <section id="members" class="section">
-            <div class="container">
-                <h2>팀원 소개</h2>
-                <div class="members-grid">
-                    <!-- 팀원 카드들 -->
-                    <div class="member-card"><!-- 팀원 1 정보 --></div>
-                    <div class="member-card"><!-- 팀원 2 정보 --></div>
-                    <!-- 추가 팀원 카드 -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 푸터 -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 천지창조. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="js/scroll.js"></script>
 </body>
 
 </html>
